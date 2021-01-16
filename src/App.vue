@@ -1,28 +1,52 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div id='app'>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Rock+Salt&display=swap" rel="stylesheet">
+     <kanye-quote class='k-quote' :quote="KanyeQuote"></kanye-quote>
+     <weather-app></weather-app>
+     <hr></hr>
+     <h2>Weather App</h2>
+</div>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import { eventBus } from './main.js'
+import KanyeQuote from './components/KanyeQuote.vue'
+import Weather from './components/Weather.vue'
 export default {
-  name: 'App',
+  name: 'app',
+  data(){
+   return{
+   KanyeQuote: undefined,
+   city: undefined
+   }
+  },
+
+  mounted() {
+    fetch('https://api.kanye.rest/')
+    .then(res => res.json())
+    .then(KanyeQuote => this.KanyeQuote = KanyeQuote.quote)
+
+
+  }, 
   components: {
-    HelloWorld
+    "kanye-quote": KanyeQuote,
+    "weather-app": Weather
   }
+
 }
 </script>
 
-<style>
+<style lang='css' scoped>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: 'Amatic SC', cursive;
+  background: rgb(248, 192, 239);
+  color: black;
+}
+.k-quote {
+  padding: 20px;
 }
 </style>
