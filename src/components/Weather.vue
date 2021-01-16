@@ -20,7 +20,7 @@ export default {
   props: ['city'],
   methods: {
      getWeather(cityInput) {
-        const key = 'f70c633e90e1f06b2571a612affd27fe';
+        const key = '';
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${key}&units=metric`)
         .then(res => res.json())
         .then(city => this.infoFromAPI = city)
