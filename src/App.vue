@@ -40,6 +40,7 @@ export default {
 <style lang='css' scoped>
 #app {
   display: flex;
+  justify-content: space-evenly;
   text-align: center;
   font-family: 'Amatic SC', cursive;
   background: rgb(248, 192, 239);
