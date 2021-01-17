@@ -1,11 +1,11 @@
 <template>
   <div class='weather-section'>
-      <h1>Weather App</h1>
-          <label for='city'>Choose a city</label>
+      <h1 class='weather-title'>Weather App</h1>
+          <label class='pick-a-city' for='city'>Choose a city</label>
           <br>
           <input type='text' id='city' name='city' v-model='cityInput' value=''>
           <br>
-          <button v-on:click='getWeather(cityInput)'>Get Weather Info</button>
+          <button class='weather-button' v-on:click='getWeather(cityInput)'>Get Weather Info</button>
           <br>
           <p v-if='infoFromAPI'>Place - {{ infoFromAPI.name }}</p>
           <p v-if='infoFromAPI'>{{ infoFromAPI.weather[0].description }}</p>
@@ -50,6 +50,28 @@ export default {
 
 </script>
 
-<style>
+<style lang='css' scoped>
+.weather-title {
+    padding: 15px;
+    background-color: black;
+    color: rgb(252, 228, 248);
+}
+
+.weather-button { 
+   padding: 20px; 
+   border-radius: 6px;
+   font-family: 'Amatic SC', cursive;
+   font-size: 20px;
+   background-color: rgb(0, 0, 0); 
+   color: rgb(252, 228, 248);
+}
+
+.pick-a-city { 
+   padding: 10px; 
+   font-family: 'Amatic SC', cursive;
+   font-size: 20px;
+   background-color: rgb(0, 0, 0); 
+   color: rgb(252, 228, 248);    
+}
 
 </style>

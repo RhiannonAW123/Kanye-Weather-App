@@ -5,7 +5,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Rock+Salt&display=swap" rel="stylesheet">
      <kanye-quote class='k-quote' :quote="KanyeQuote"></kanye-quote>
      <weather-app></weather-app>
-     <hr></hr>
 </div>
   
 </template>
@@ -40,6 +39,7 @@ export default {
 
 <style lang='css' scoped>
 #app {
+  display: flex;
   text-align: center;
   font-family: 'Amatic SC', cursive;
   background: rgb(248, 192, 239);
