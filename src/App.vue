@@ -6,7 +6,6 @@
      <kanye-quote class='k-quote' :quote="KanyeQuote"></kanye-quote>
      <weather-app></weather-app>
      <hr></hr>
-     <h2>Weather App</h2>
 </div>
   
 </template>
